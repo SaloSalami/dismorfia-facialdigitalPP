@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dismorfia facial digital
+    </title>
+</head>
+<body>
+
+<h1> La dismorfia facial digital, como surge y como afecta...</h1>
+ <p> los ultimos años la dismorfia corporal, ha sido un tema tan hablado e importante, sin embargo<br>hay un tema igualmente importante que parece casi invisible pero que como una plaga<br>crece en silencio, se gesta y crece mientras se normaliza inconscientemente</p>
+
+<img src="dismc.jpg" alt="La dismorfia facial digital es un trastorno en crecimiento.">
+
+<br>
+<p>aqui un debate analizando como toda esta problematica facial ya no solo se va a filtros sino <br>que algunos casos de insatisfaccion fisica y deseo de cumplir cannones escalan a quirofanos</p> <br>
+
+<details>
+    <summary> escucha el debate!</summary>
+<audio controls>
+  <source src="audio.mp3" type="audio/mpeg">
+</audio>
+</details>
+
+<iframe>
+    width="560" height="315"
+    src="https://www.youtube.com/watch?v=KXPZAnVsn0g" 
+    title="Todo lo que debes saber"
+     allowfullscreen>
+</iframe>
+
+
+<details>
+
+    <summary> que opinas!</summary>
+<form id="formcomentario">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required><br><br>
+
+    <label for="comentario">Comentario:</label><br>
+    <textarea id="comentario" name="comentario" rows="4" cols="50" required></textarea><br><br>
+
+    <button type="submit" value="Enviar">Enviar</button>
+</form>
+<div id="comentarios"></div>
+
+</details>
+
+<script>
+    const form = document.getElementById('formcomentario');
+    const comentariosDiv = document.getElementById('comentarios');
+    const comentariosList = document.getElementById('comentarios');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const nombre = document.getElementById('nombre').value;
+        const texto = document.getElementById('comentario').value;
+
+        const parrafo = document.createElement('p');
+        const autor = document.createElement('strong');
+
+        autor.textContent = nombre + ":";
+        parrafo.append(autor, document.createTextNode(texto));
+        comentariosList.appendChild(parrafo);
+
+        form.reset();
+    });
+</script>
+</body>
+</html>
